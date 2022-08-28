@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive NavBar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+
+    body{
+        background-color:rgb(162, 124, 197);
+    }
+    .nav-bar{
+        padding: 20px 60px;
+        display: none;
+        /* text-align: right; */
+    }
+
+    #menu{
+        margin: auto;
+        padding: 5px;
+        width: 15%;
+        text-align: center;
+        font-size: 2.5rem;
+        align-items: center;
+        border: 4px solid rgb(1, 1, 11);
+        border-radius: 5px;
+    }
+
+    #cancel{
+       position: absolute;
+       right: 30px;
+       width: 20px;
+       text-align: center;
+       border: 4px solid rgb(1, 1, 17);
+       border-radius: 5px;
+       padding: 5px;
+       display: none;
+    }
+
+    #menu:hover{
+        cursor: pointer;
+        background-color: rgb(254, 201, 210);
+    }
+
+    #cancel:hover{
+        cursor: pointer;
+        background-color: rgb(254, 201, 210);
+    }
+
+    li{
+        margin: 10px;
+        padding: 15px 0;
+        text-align: center;
+        list-style: none;
+        background-color: rgb(196, 155, 223);
+        border: 3px solid rgb(10, 10, 10);
+        border-radius: 10px;
+        transition: 0.5s ease-out;
+    }
+
+    .list{
+        font-size:1.5rem;
+        font-family: Verdana,Tahoma, sans-serif;
+        color: rgb(120, 16, 168);
+        text-decoration: none;
+    }
+    .list:active{
+        display: block;
+    }
+    
+    li:hover{
+        cursor: pointer;
+        background-color: rgb(254, 201, 210);
+    }
+
+
+</style>
+<body>
+    <div id="nav">
+        <div id="menu" ><i class="fa-solid fa-bars"></i></div>
+        <div id="cancel"><i class="fa-solid fa-xmark"></i></div>
+        <ul class="nav-bar">
+            <li><a href="" class="list">HOME</a></li>
+            <li><a href="" class="list">SERVICES</a></li>
+            <li><a href="" class="list">ABOUT</a></li>
+            <li><a href="" class="list">BLOGS</a></li>
+        </ul>
+    </div>
+<script>
+
+    const menu = document.querySelector("#menu");
+    const container = document.querySelector(".nav-bar");
+
+    const cancelBar = document.querySelector("#cancel");
+
+    menu.addEventListener("click", function() {
+        if (container.style.display === "none"){
+            container.style.display = "block";
+            cancelBar.style.display = "block";
+        } else {
+            container.style.display = "none";
+            cancelBar.style.display = "none";
+        }
+    })
+
+</script>
+</body>
+</html>
